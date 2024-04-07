@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601045322BC0C9070033DC09 /* Flip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601045312BC0C9070033DC09 /* Flip.swift */; };
+		601045342BC0CC6B0033DC09 /* LastFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601045332BC0CC6B0033DC09 /* LastFlipView.swift */; };
 		60ABD8592BA124A6002985DC /* PhoneFlipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8582BA124A6002985DC /* PhoneFlipApp.swift */; };
 		60ABD85B2BA124A6002985DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD85A2BA124A6002985DC /* ContentView.swift */; };
 		60ABD85D2BA124A8002985DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60ABD85C2BA124A8002985DC /* Assets.xcassets */; };
@@ -14,6 +16,16 @@
 		60ABD86A2BA124A8002985DC /* PhoneFlipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8692BA124A8002985DC /* PhoneFlipTests.swift */; };
 		60ABD8742BA124A8002985DC /* PhoneFlipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8732BA124A8002985DC /* PhoneFlipUITests.swift */; };
 		60ABD8762BA124A8002985DC /* PhoneFlipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8752BA124A8002985DC /* PhoneFlipUITestsLaunchTests.swift */; };
+		60ABD8872BA1273B002985DC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8862BA1273B002985DC /* HomeViewModel.swift */; };
+		60ABD8892BA127A8002985DC /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8882BA127A8002985DC /* GameMode.swift */; };
+		60ABD88B2BA12816002985DC /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD88A2BA12816002985DC /* GameSession.swift */; };
+		60ABD88D2BA12839002985DC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD88C2BA12839002985DC /* UserSettings.swift */; };
+		60ABD88F2BA12873002985DC /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD88E2BA12873002985DC /* GameViewModel.swift */; };
+		60ABD8912BA12BF8002985DC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8902BA12BF8002985DC /* GameView.swift */; };
+		60ABD8932BA3D30E002985DC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8922BA3D30E002985DC /* TimerView.swift */; };
+		60ABD8952BA50051002985DC /* StartStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8942BA50051002985DC /* StartStopButton.swift */; };
+		60ABD8972BA5010B002985DC /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8962BA5010B002985DC /* ScoreView.swift */; };
+		60ABD89A2BA50884002985DC /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8992BA50884002985DC /* RefreshButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		601045312BC0C9070033DC09 /* Flip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flip.swift; sourceTree = "<group>"; };
+		601045332BC0CC6B0033DC09 /* LastFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFlipView.swift; sourceTree = "<group>"; };
 		60ABD8552BA124A6002985DC /* PhoneFlip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneFlip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ABD8582BA124A6002985DC /* PhoneFlipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFlipApp.swift; sourceTree = "<group>"; };
 		60ABD85A2BA124A6002985DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +58,16 @@
 		60ABD86F2BA124A8002985DC /* PhoneFlipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneFlipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ABD8732BA124A8002985DC /* PhoneFlipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFlipUITests.swift; sourceTree = "<group>"; };
 		60ABD8752BA124A8002985DC /* PhoneFlipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFlipUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		60ABD8862BA1273B002985DC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		60ABD8882BA127A8002985DC /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		60ABD88A2BA12816002985DC /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
+		60ABD88C2BA12839002985DC /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		60ABD88E2BA12873002985DC /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		60ABD8902BA12BF8002985DC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		60ABD8922BA3D30E002985DC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		60ABD8942BA50051002985DC /* StartStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStopButton.swift; sourceTree = "<group>"; };
+		60ABD8962BA5010B002985DC /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		60ABD8992BA50884002985DC /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				60ABD8582BA124A6002985DC /* PhoneFlipApp.swift */,
-				60ABD85A2BA124A6002985DC /* ContentView.swift */,
+				60ABD8832BA124DF002985DC /* Views */,
+				60ABD8842BA124E8002985DC /* ModelViews */,
+				60ABD8852BA124F2002985DC /* Models */,
 				60ABD85C2BA124A8002985DC /* Assets.xcassets */,
 				60ABD85E2BA124A8002985DC /* Preview Content */,
 			);
@@ -125,6 +151,48 @@
 				60ABD8752BA124A8002985DC /* PhoneFlipUITestsLaunchTests.swift */,
 			);
 			path = PhoneFlipUITests;
+			sourceTree = "<group>";
+		};
+		60ABD8832BA124DF002985DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60ABD85A2BA124A6002985DC /* ContentView.swift */,
+				60ABD8982BA50162002985DC /* Components */,
+				60ABD8902BA12BF8002985DC /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60ABD8842BA124E8002985DC /* ModelViews */ = {
+			isa = PBXGroup;
+			children = (
+				60ABD8862BA1273B002985DC /* HomeViewModel.swift */,
+				60ABD88E2BA12873002985DC /* GameViewModel.swift */,
+			);
+			path = ModelViews;
+			sourceTree = "<group>";
+		};
+		60ABD8852BA124F2002985DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60ABD8882BA127A8002985DC /* GameMode.swift */,
+				60ABD88A2BA12816002985DC /* GameSession.swift */,
+				60ABD88C2BA12839002985DC /* UserSettings.swift */,
+				601045312BC0C9070033DC09 /* Flip.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		60ABD8982BA50162002985DC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				60ABD8922BA3D30E002985DC /* TimerView.swift */,
+				60ABD8942BA50051002985DC /* StartStopButton.swift */,
+				60ABD8962BA5010B002985DC /* ScoreView.swift */,
+				601045332BC0CC6B0033DC09 /* LastFlipView.swift */,
+				60ABD8992BA50884002985DC /* RefreshButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +325,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60ABD8932BA3D30E002985DC /* TimerView.swift in Sources */,
+				60ABD89A2BA50884002985DC /* RefreshButton.swift in Sources */,
+				601045322BC0C9070033DC09 /* Flip.swift in Sources */,
 				60ABD85B2BA124A6002985DC /* ContentView.swift in Sources */,
+				60ABD88D2BA12839002985DC /* UserSettings.swift in Sources */,
+				60ABD8892BA127A8002985DC /* GameMode.swift in Sources */,
+				60ABD8952BA50051002985DC /* StartStopButton.swift in Sources */,
+				601045342BC0CC6B0033DC09 /* LastFlipView.swift in Sources */,
+				60ABD88B2BA12816002985DC /* GameSession.swift in Sources */,
+				60ABD8872BA1273B002985DC /* HomeViewModel.swift in Sources */,
+				60ABD8972BA5010B002985DC /* ScoreView.swift in Sources */,
 				60ABD8592BA124A6002985DC /* PhoneFlipApp.swift in Sources */,
+				60ABD8912BA12BF8002985DC /* GameView.swift in Sources */,
+				60ABD88F2BA12873002985DC /* GameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
