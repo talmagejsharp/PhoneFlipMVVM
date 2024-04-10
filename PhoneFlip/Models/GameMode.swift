@@ -8,14 +8,14 @@
 import Foundation
 
 enum GameMode: String, CaseIterable, Identifiable {
-    case classic, timed, freestyle
+    case classic, followTheLeader, freestyle
     
     var id: Self { self }
     
     var displayName: String {
         switch self {
         case .classic: return "Classic"
-        case .timed: return "Timed"
+        case .followTheLeader: return "Follow The Leader"
         case .freestyle: return "Freestyle"
         }
     }

@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var selectedGameMode: GameMode?
-    @Published var gameModes: [GameMode] = [.classic, .timed, .freestyle]
+    @Published var gameModes: [GameMode] = [.classic, .followTheLeader, .freestyle]
     
     func selectGameMode(_ mode: GameMode){
         selectedGameMode = mode

@@ -10,6 +10,7 @@ import Combine
 
 class GameSession: ObservableObject {
     @Published var lastFlip: Flip = .notSet
+    @Published var nextFlip: Flip = .notSet
     @Published var score: Int
     @Published var isRunning: Bool
     @Published var refreshable = false

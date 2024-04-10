@@ -12,6 +12,7 @@ struct GameView: View {
     @ObservedObject var viewModel: GameViewModel
     
     init(mode: GameMode){
+        print("initializing a gameViewModel with type: \(mode.displayName)")
         viewModel = GameViewModel(currentMode: mode)
     }
     
@@ -34,11 +35,21 @@ struct GameView: View {
                         Spacer()
                     }
                     // UI for classic mode
-                } else if viewModel.currentMode == .timed {
-                    Text("Welcome to the timed View")
+                } else if viewModel.currentMode == .followTheLeader {
+                    Text("Welcome to the Follow The Leader View")
+                    Spacer()
+                    LastFlipView(lastFlip: $viewModel.nextFlip)
+                    Spacer()
+                    LastFlipView(lastFlip: $viewModel.lastFlip)
+                    Spacer()
+                    MatchedView(matched: $viewModel.matched)
+                    Spacer()
                     // UI for timed mode
                 } else if viewModel.currentMode == .freestyle {
-                    Text("Welcome to the freestyle View")
+//                    Text("Welcome to the freestyle View")
+                    Spacer()
+                    LastFlipView(lastFlip: $viewModel.lastFlip)
+                    Spacer()
                     // UI for freestyle mode
                 }
             }

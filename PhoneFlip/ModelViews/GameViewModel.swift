@@ -14,6 +14,8 @@ class GameViewModel: ObservableObject {
     @Published var score: Int = 0
     @Published var isRunning: Bool = false
     @Published var lastFlip: Flip = .notSet
+    @Published var nextFlip: Flip = .notSet
+    @Published var matched: Bool = false
     @Published var refreshable: Bool = false
     @Published var timeLeft: TimeInterval = 0
     private var cancellables: Set<AnyCancellable> = []
@@ -37,7 +39,9 @@ class GameViewModel: ObservableObject {
         gameSession.$score.assign(to: &$score)
         gameSession.$isRunning.assign(to: &$isRunning)
         gameSession.$lastFlip.assign(to: &$lastFlip)
+        gameSession.$nextFlip.assign(to: &$nextFlip)
         gameSession.$refreshable.assign(to: &$refreshable)
+        setGameSettings(newMode: currentMode)
 
     }
 
@@ -50,12 +54,15 @@ class GameViewModel: ObservableObject {
             print("ViewModel IsRunning: \(self.isRunning), GameSession IsRunning: \(self.gameSession.isRunning)")
             print("ViewModel LastFlip: \(self.lastFlip), GameSession LastFlip: \(self.gameSession.lastFlip)")
             print("ViewModel Refreshable: \(self.refreshable), GameSession Refreshable: \(self.gameSession.refreshable)")
-
-        timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { [weak self] _ in
-            self?.gameSession.timeLeft -= 0.001
-            if self?.gameSession.timeLeft ?? 0 <= 0.001{
-                self?.endGame()
+        if(currentMode == .classic){
+            timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { [weak self] _ in
+                self?.gameSession.timeLeft -= 0.001
+                if self?.gameSession.timeLeft ?? 0 <= 0.001{
+                    self?.endGame()
+                }
             }
+        } else if( currentMode == .followTheLeader){
+            generateNewTrick()
         }
         startDetecting()
     }
@@ -69,6 +76,10 @@ class GameViewModel: ObservableObject {
         self.gameSession.refreshable = true
     }
     
+    private func updateScore(flip: Flip){
+        self.gameSession.score += flip.score
+    }
+    
     func refreshGame() {
         print("Refresh Game")
         timer?.invalidate()
@@ -77,6 +88,7 @@ class GameViewModel: ObservableObject {
         self.gameSession.refreshable = false
         self.gameSession.lastFlip = .notSet
         gameSession.timeLeft = gameSession.defaultTimeLeft
+        gameSession.score = 0
     }
     
     func startDetecting() {
@@ -123,39 +135,6 @@ class GameViewModel: ObservableObject {
                 zRotation = 0
             }
         }
-    /*
-    func startDetecting() {
-        motionManager.startGyroUpdates(to: OperationQueue.current!){(data, error)in
-            if let trueData = data{
-//                self.gameSession.score = "Score: \(self.scoreNum)"
-                self.xRotation += Int(trueData.rotationRate.x)
-                self.yRotation += Int(trueData.rotationRate.y)
-                self.zRotation += Int(trueData.rotationRate.z)
-                if ((self.xRotation > 5 || self.yRotation > 5 || self.zRotation > 5) && !self.isFlipping) {
-                    self.isFlipping = true
-                }
-                if (self.isFlipping){
-                    self.flipMetrics.append([self.xRotation, self.yRotation, self.zRotation])
-                }
-                if (self.isFlipping && self.xRotation == 0 && self.yRotation == 0 && self.zRotation == 0){
-                    if (self.gameSession.isRunning) {
-                        self.CheckTrick(trickStats: self.flipMetrics)
-                    }
-                    self.isFlipping = false
-                }
-                if self.xRotation != 0 || self.yRotation != 0 || self.zRotation != 0 {
-                    //print("x: \(self.xRotation)" + "  y: \(self.yRotation)" + "   z\(self.zRotation)")
-                }
-                if trueData.rotationRate.x < 1 && trueData.rotationRate.y < 1 && trueData.rotationRate.z < 1 {
-                   self.xRotation = 0
-                   self.yRotation = 0
-                   self.zRotation = 0
-                }
-            }
-            
-        }
-    }
-    */
     func CheckTrick(trickStats: [[Int]]){
         var max = [0,0,0]
         var min = [0,0,0]
@@ -179,8 +158,47 @@ class GameViewModel: ObservableObject {
         let newFlip = lastFlip.WhatTrick(max: max, min: min)
         if(newFlip != .notSet){
             self.gameSession.lastFlip = newFlip
+            if(currentMode == .followTheLeader){
+                matched = matchedFlip(newFlip: newFlip, nextFlip: nextFlip)
+            }
         }
         
         self.flipMetrics.removeAll()
+        updateScore(flip: newFlip)
+       
+    }
+    
+    func matchedFlip(newFlip: Flip, nextFlip: Flip) -> Bool{
+        if(newFlip == self.nextFlip){
+            generateNewTrick()
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func generateNewTrick() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                let allFlips = Flip.allCases.filter { $0 != .notSet }
+                if let randomFlip = allFlips.randomElement(){
+                    self.gameSession.nextFlip = randomFlip
+                }
+            self.gameSession.lastFlip = .notSet
+        }
+        
+    }
+    
+    func setGameSettings(newMode: GameMode){
+        switch newMode {
+        case .classic:
+            
+            break
+        case .followTheLeader:
+            startGame()
+            break
+        case .freestyle:
+            startGame()
+            break
+        }
     }
 }

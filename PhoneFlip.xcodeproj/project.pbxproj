@@ -26,6 +26,7 @@
 		60ABD8952BA50051002985DC /* StartStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8942BA50051002985DC /* StartStopButton.swift */; };
 		60ABD8972BA5010B002985DC /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8962BA5010B002985DC /* ScoreView.swift */; };
 		60ABD89A2BA50884002985DC /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8992BA50884002985DC /* RefreshButton.swift */; };
+		60D5147E2BC74893007A4526 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D5147D2BC74893007A4526 /* MatchedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		60ABD8942BA50051002985DC /* StartStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStopButton.swift; sourceTree = "<group>"; };
 		60ABD8962BA5010B002985DC /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		60ABD8992BA50884002985DC /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
+		60D5147D2BC74893007A4526 /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				60ABD8962BA5010B002985DC /* ScoreView.swift */,
 				601045332BC0CC6B0033DC09 /* LastFlipView.swift */,
 				60ABD8992BA50884002985DC /* RefreshButton.swift */,
+				60D5147D2BC74893007A4526 /* MatchedView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				60ABD89A2BA50884002985DC /* RefreshButton.swift in Sources */,
 				601045322BC0C9070033DC09 /* Flip.swift in Sources */,
 				60ABD85B2BA124A6002985DC /* ContentView.swift in Sources */,
+				60D5147E2BC74893007A4526 /* MatchedView.swift in Sources */,
 				60ABD88D2BA12839002985DC /* UserSettings.swift in Sources */,
 				60ABD8892BA127A8002985DC /* GameMode.swift in Sources */,
 				60ABD8952BA50051002985DC /* StartStopButton.swift in Sources */,

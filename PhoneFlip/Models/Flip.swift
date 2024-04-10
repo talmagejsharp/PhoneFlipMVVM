@@ -29,6 +29,18 @@ enum Flip: String, CaseIterable, Identifiable {
         }
     }
     
+    var score: Int{
+        switch self{
+        case .notSet: return 0
+        case .kickflip: return 25
+        case .heelflip: return 50
+        case .threeSixty: return 25
+        case .reverseThreeSixty: return 50
+        case .full: return 75
+        case .inverseFull: return 100
+        }
+    }
+    
     var thresholds: FlipThreshold {
         switch self {
         case .notSet:
@@ -50,7 +62,7 @@ enum Flip: String, CaseIterable, Identifiable {
     
     func WhatTrick(max: [Int], min: [Int]) -> Flip {
         print("Checking Flip with min \(min) and max \(max)")
-        if(min[1] < -300 && max[0] > 100 && max[2] > 100){
+        if(min[1] < -300 && max[0] > 100 /*&& max[2] > 100*/){
             return .full
         } else if(max[1] > 600 && max[0] > 100 && max[2] > 100){
             return .inverseFull
