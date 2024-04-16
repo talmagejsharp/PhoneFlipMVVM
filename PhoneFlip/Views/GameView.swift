@@ -33,6 +33,7 @@ struct GameView: View {
                             }
                         }
                         Spacer()
+                        //TODO: Make something display your score when it finishes
                     }
                     // UI for classic mode
                 } else if viewModel.currentMode == .followTheLeader {
@@ -44,6 +45,7 @@ struct GameView: View {
                     Spacer()
                     MatchedView(matched: $viewModel.matched)
                     Spacer()
+                    //TODO: Add a Streak Counter? Add Points? A Timer? If it was the wrong flip do we set a new flip?
                     // UI for timed mode
                 } else if viewModel.currentMode == .freestyle {
 //                    Text("Welcome to the freestyle View")

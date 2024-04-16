@@ -27,6 +27,7 @@
 		60ABD8972BA5010B002985DC /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8962BA5010B002985DC /* ScoreView.swift */; };
 		60ABD89A2BA50884002985DC /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8992BA50884002985DC /* RefreshButton.swift */; };
 		60D5147E2BC74893007A4526 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D5147D2BC74893007A4526 /* MatchedView.swift */; };
+		60D514802BC74D1E007A4526 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D5147F2BC74D1E007A4526 /* MatchState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		60ABD8962BA5010B002985DC /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		60ABD8992BA50884002985DC /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		60D5147D2BC74893007A4526 /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
+		60D5147F2BC74D1E007A4526 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				60ABD88A2BA12816002985DC /* GameSession.swift */,
 				60ABD88C2BA12839002985DC /* UserSettings.swift */,
 				601045312BC0C9070033DC09 /* Flip.swift */,
+				60D5147F2BC74D1E007A4526 /* MatchState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				60ABD8892BA127A8002985DC /* GameMode.swift in Sources */,
 				60ABD8952BA50051002985DC /* StartStopButton.swift in Sources */,
 				601045342BC0CC6B0033DC09 /* LastFlipView.swift in Sources */,
+				60D514802BC74D1E007A4526 /* MatchState.swift in Sources */,
 				60ABD88B2BA12816002985DC /* GameSession.swift in Sources */,
 				60ABD8872BA1273B002985DC /* HomeViewModel.swift in Sources */,
 				60ABD8972BA5010B002985DC /* ScoreView.swift in Sources */,

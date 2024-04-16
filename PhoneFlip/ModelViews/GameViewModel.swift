@@ -15,7 +15,7 @@ class GameViewModel: ObservableObject {
     @Published var isRunning: Bool = false
     @Published var lastFlip: Flip = .notSet
     @Published var nextFlip: Flip = .notSet
-    @Published var matched: Bool = false
+    @Published var matched: MatchState = .notSet
     @Published var refreshable: Bool = false
     @Published var timeLeft: TimeInterval = 0
     private var cancellables: Set<AnyCancellable> = []
@@ -168,12 +168,12 @@ class GameViewModel: ObservableObject {
        
     }
     
-    func matchedFlip(newFlip: Flip, nextFlip: Flip) -> Bool{
+    func matchedFlip(newFlip: Flip, nextFlip: Flip) -> MatchState{
         if(newFlip == self.nextFlip){
             generateNewTrick()
-            return true
+            return .matched
         } else {
-            return false
+            return .notMatched
         }
     }
     
@@ -184,6 +184,7 @@ class GameViewModel: ObservableObject {
                     self.gameSession.nextFlip = randomFlip
                 }
             self.gameSession.lastFlip = .notSet
+            self.matched = .notSet
         }
         
     }
