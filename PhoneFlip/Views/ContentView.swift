@@ -9,13 +9,44 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel = HomeViewModel()
+    @State private var showingInfoView = false
 
     var body: some View {
         NavigationView {
             VStack {
-                Text("PhoneFlip")
-                    .font(.largeTitle)
+                HStack {
+                    // Settings button on the left
+                    Button(action: {
+                        // Action for settings
+                        print("Settings tapped")
+                    }) {
+                        Image(systemName: "gearshape.fill")
+                            .imageScale(.large)  // Increase the scale of the icon
+                            .font(.title)        // Increase the font size of the icon
+                            .foregroundColor(.blue)
+                    }
                     .padding()
+
+                    Spacer() // Spacer to push the title and buttons apart
+
+                    // Title in the center
+                    Text("PhoneFlip")
+                        .font(.largeTitle)
+
+                    Spacer() // Another spacer for symmetry
+
+                    // Information button on the right
+                    Button(action: {
+                        // Action for information
+                        showingInfoView = true
+                    }) {
+                        Image(systemName: "info.circle.fill")
+                            .imageScale(.large)  // Increase the scale of the icon
+                            .font(.title)        // Increase the font size of the icon
+                            .foregroundColor(.blue)
+                    }
+                    .padding()
+                }
                 Spacer()
                 
                     ForEach(viewModel.gameModes, id: \.self) { mode in
@@ -33,6 +64,9 @@ struct ContentView: View {
                     }
             }
             .padding()
+            .sheet(isPresented: $showingInfoView) {
+                            InfoView(viewModel: viewModel)
+                        }
         }
     }
 }

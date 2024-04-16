@@ -28,6 +28,7 @@
 		60ABD89A2BA50884002985DC /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABD8992BA50884002985DC /* RefreshButton.swift */; };
 		60D5147E2BC74893007A4526 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D5147D2BC74893007A4526 /* MatchedView.swift */; };
 		60D514802BC74D1E007A4526 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D5147F2BC74D1E007A4526 /* MatchState.swift */; };
+		60E5771B2BCF3D8700D000F5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E5771A2BCF3D8700D000F5 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		60ABD8992BA50884002985DC /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		60D5147D2BC74893007A4526 /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
 		60D5147F2BC74D1E007A4526 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
+		60E5771A2BCF3D8700D000F5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				60ABD85A2BA124A6002985DC /* ContentView.swift */,
-				60ABD8982BA50162002985DC /* Components */,
 				60ABD8902BA12BF8002985DC /* GameView.swift */,
+				60ABD8982BA50162002985DC /* Components */,
+				60E5771A2BCF3D8700D000F5 /* InfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				60ABD89A2BA50884002985DC /* RefreshButton.swift in Sources */,
 				601045322BC0C9070033DC09 /* Flip.swift in Sources */,
 				60ABD85B2BA124A6002985DC /* ContentView.swift in Sources */,
+				60E5771B2BCF3D8700D000F5 /* InfoView.swift in Sources */,
 				60D5147E2BC74893007A4526 /* MatchedView.swift in Sources */,
 				60ABD88D2BA12839002985DC /* UserSettings.swift in Sources */,
 				60ABD8892BA127A8002985DC /* GameMode.swift in Sources */,

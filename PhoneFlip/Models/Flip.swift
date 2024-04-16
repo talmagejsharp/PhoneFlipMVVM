@@ -29,6 +29,18 @@ enum Flip: String, CaseIterable, Identifiable {
         }
     }
     
+    var description: String {
+        switch self{
+        case .notSet: return "EXCLUDE THIS ONE!"
+        case .kickflip: return "Flip your phone in a kickflip like way to the right. Flip it on the long side"
+        case .heelflip: return "Flip your phone in a kickflip like way to the left. Flip it on the long side"
+        case .threeSixty: return "Rotate your phone 360 degrees clockwise."
+        case .reverseThreeSixty: return "Rotate your phone 360 degrees counter-clockwise"
+        case .full: return "This is a 360 + a heelflip. Flip the phone while spinning it. Push the top right corner towards you."
+        case .inverseFull: return "This is a 360 + a kickflip. Flip the phone inwards with your thumb on the bottom right corner."
+        }
+    }
+    
     var score: Int{
         switch self{
         case .notSet: return 0
