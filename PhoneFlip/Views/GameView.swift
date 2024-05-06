@@ -24,7 +24,7 @@ struct GameView: View {
                         TimerView(viewModel: self.viewModel)
                         Spacer()
                         LastFlipView(lastFlip: $viewModel.lastFlip)
-                        ScoreView(score: $viewModel.score)
+                        ScoreView(score: $viewModel.score, isRunning: $viewModel.isRunning)
                         Spacer()
                         HStack{
                             StartStopButton(isRunning: $viewModel.isRunning, startGameAction: viewModel.startGame, endGameAction: viewModel.endGame)
@@ -37,7 +37,7 @@ struct GameView: View {
                     }
                     // UI for classic mode
                 } else if viewModel.currentMode == .followTheLeader {
-                    Text("Welcome to the Follow The Leader View")
+//                     Text("Welcome to the Follow The Leader View")
                     Spacer()
                     LastFlipView(lastFlip: $viewModel.nextFlip)
                     Spacer()

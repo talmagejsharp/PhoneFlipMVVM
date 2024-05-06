@@ -29,6 +29,7 @@
 		60D5147E2BC74893007A4526 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D5147D2BC74893007A4526 /* MatchedView.swift */; };
 		60D514802BC74D1E007A4526 /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D5147F2BC74D1E007A4526 /* MatchState.swift */; };
 		60E5771B2BCF3D8700D000F5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E5771A2BCF3D8700D000F5 /* InfoView.swift */; };
+		60E5771E2BD06C9300D000F5 /* Honk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60E5771D2BD06C9300D000F5 /* Honk-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		60D5147D2BC74893007A4526 /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
 		60D5147F2BC74D1E007A4526 /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
 		60E5771A2BCF3D8700D000F5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		60E5771D2BD06C9300D000F5 /* Honk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Honk-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		60ABD8572BA124A6002985DC /* PhoneFlip */ = {
 			isa = PBXGroup;
 			children = (
+				60E5771C2BD06C7200D000F5 /* Fonts */,
 				60ABD8582BA124A6002985DC /* PhoneFlipApp.swift */,
 				60ABD8832BA124DF002985DC /* Views */,
 				60ABD8842BA124E8002985DC /* ModelViews */,
@@ -202,6 +205,14 @@
 				60D5147D2BC74893007A4526 /* MatchedView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		60E5771C2BD06C7200D000F5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				60E5771D2BD06C9300D000F5 /* Honk-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60ABD8602BA124A8002985DC /* Preview Assets.xcassets in Resources */,
+				60E5771E2BD06C9300D000F5 /* Honk-Regular.ttf in Resources */,
 				60ABD85D2BA124A8002985DC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,7 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhoneFlip/Preview Content\"";
-				DEVELOPMENT_TEAM = 82A5RT7UV8;
+				DEVELOPMENT_TEAM = 4Q5M5P56W8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -543,7 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PhoneFlip/Preview Content\"";
-				DEVELOPMENT_TEAM = 82A5RT7UV8;
+				DEVELOPMENT_TEAM = 4Q5M5P56W8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

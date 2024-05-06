@@ -20,13 +20,16 @@ struct StartStopButton: View {
             } else {
                 startGameAction()
             }
-        }){
+        }) {
             Text(isRunning ? "Stop" : "Start")
+                .fontWeight(.bold)
                 .foregroundColor(.white)
                 .padding()
-                .frame(minWidth: 200) // Set the minimum width to 200 points
-                .background(isRunning ? Color.red : Color.blue)
+                .frame(minWidth: 200)
+                .background(LinearGradient(gradient: Gradient(colors: [isRunning ? .red : .blue, isRunning ? .orange : .purple]), startPoint: .leading, endPoint: .trailing))
                 .cornerRadius(10)
+                .shadow(radius: 5)
         }
     }
 }
+
