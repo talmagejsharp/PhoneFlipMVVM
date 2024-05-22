@@ -11,24 +11,24 @@ import SwiftUI
 struct GameView: View {
     @ObservedObject var viewModel: GameViewModel
     
-    init(mode: GameMode){
+    init(mode: GameMode){ //pass a GameMode class into the initializer
         print("initializing a gameViewModel with type: \(mode.displayName)")
-        viewModel = GameViewModel(currentMode: mode)
+        viewModel = GameViewModel(currentMode: mode) //instantiates a gameViewModel for the current gameMode
     }
     
     var body: some View {
             VStack {
-                if viewModel.currentMode == .classic {
+                if viewModel.currentMode == .classic { //specific UI components for .classic mode
                     VStack{
 //                        Text("Welcome to the Classic View")
-                        TimerView(viewModel: self.viewModel)
+                        TimerView(viewModel: self.viewModel) //creates a TimerView()
                         Spacer()
-                        LastFlipView(lastFlip: $viewModel.lastFlip)
+                        LastFlipView(lastFlip: $viewModel.lastFlip) //displays the viewModel.lastFlip value
                         ScoreView(score: $viewModel.score, isRunning: $viewModel.isRunning)
                         Spacer()
                         HStack{
                             StartStopButton(isRunning: $viewModel.isRunning, startGameAction: viewModel.startGame, endGameAction: viewModel.endGame)
-                            if !viewModel.isRunning && viewModel.refreshable {
+                            if !viewModel.isRunning && viewModel.refreshable { //adds a refresh button if the game is refreshable
                                 RefreshButton(action: viewModel.refreshGame)
                             }
                         }

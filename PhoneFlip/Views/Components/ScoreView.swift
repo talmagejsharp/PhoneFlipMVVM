@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 struct ScoreView: View {
-    @Binding var score: Int
+    @Binding var score: Int //binds score to what's passed in
     @Binding var isRunning: Bool
-    @State private var animatePop = false
+    @State private var animatePop = false //controls animation
     
     var body: some View {
         Text("Score: \(score)")

@@ -10,18 +10,18 @@ import SwiftUI
 
 struct StartStopButton: View {
     @Binding var isRunning: Bool
-    var startGameAction: () -> Void
+    var startGameAction: () -> Void //functions as a parameters
     var endGameAction: () -> Void
     
     var body: some View {
         Button(action: {
             if isRunning {
-                endGameAction()
+                endGameAction() //this maps the button to endGame if its running and you click it again
             } else {
                 startGameAction()
             }
         }) {
-            Text(isRunning ? "Stop" : "Start")
+            Text(isRunning ? "Stop" : "Start") //styled button that is different colors depending on whether its running or not
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .padding()

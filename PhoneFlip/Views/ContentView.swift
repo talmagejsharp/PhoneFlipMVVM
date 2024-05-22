@@ -1,20 +1,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = HomeViewModel()
-    @State private var showingInfoView = false
+    @StateObject var viewModel = HomeViewModel() // instantiate a HomeViewModel to manage this view
+    @State private var showingInfoView = false //bool to show info sheet
+    @State private var scaleUp = false
+    @State private var scaleInfo = false
 
     var body: some View {
-        NavigationView {
-            ZStack {
+        NavigationView { //In order for navigation links to work they must be inside a NavigationView
+            ZStack { //Stacks views on top of eachother
                 // Background with a slight gradient and a texture
                 LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.8), Color.green.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-                    .overlay(
+                    /*.overlay(
                         Image("backgroundTexture") // Replace with your own texture image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                    )
+                    )*/
                 
                 VStack {
                     Spacer()
@@ -24,13 +26,17 @@ struct ContentView: View {
                         .font(Font.custom("Honk-Regular", size: 50)) // Replace with your custom font
                         .foregroundColor(.white)
                         .shadow(radius: 10)
-                        .scaleEffect(1.1)
-                        .animation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true))
+                        .scaleEffect(scaleUp ? 1.1 : 1.0)
+                        .onAppear {
+                                withAnimation(Animation.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
+                                    scaleUp.toggle()
+                                }
+                            }
                          
 
                     Spacer()
                     
-                    // Animated Game Mode Buttons
+                    // Loops through game modes and creates a button for each
                     ForEach(viewModel.gameModes.indices, id: \.self) { index in
                         GameModeButton(mode: viewModel.gameModes[index])
                     }
@@ -48,11 +54,16 @@ struct ContentView: View {
                             .foregroundColor(.blue)
                             .padding()
                             .background(Circle().fill(Color.green).shadow(radius: 10))
-                            .scaleEffect(showingInfoView ? 1.2 : 1.0)
-                            .animation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true))
+                            .scaleEffect(scaleInfo ? 1.2 : 1.0)
+                            .onAppear {
+                                withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
+                                    scaleInfo.toggle()
+                                }
+                            }
+                            
                     }
                     .padding(.bottom)
-                    .sheet(isPresented: $showingInfoView) {
+                    .sheet(isPresented: $showingInfoView) { //if $showingInfoView then it will display the infoView as a popup sheet
                                                 InfoView(viewModel: viewModel)
                                             }
                 }
@@ -62,10 +73,10 @@ struct ContentView: View {
     }
 }
 
-struct GameModeButton: View {
+struct GameModeButton: View { //simple view for a gamebutton
     let mode: GameMode
     var body: some View {
-        NavigationLink(destination: GameView(mode: mode)) {
+        NavigationLink(destination: GameView(mode: mode)) { //just a button with styling
             Text(mode.displayName)
                 .font(.headline)
                 .fontWeight(.semibold)
@@ -81,7 +92,7 @@ struct GameModeButton: View {
     }
 }
 
-struct ButtonBackground: View {
+struct ButtonBackground: View { //a simple view that makes a random background
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -93,7 +104,7 @@ struct ButtonBackground: View {
                     for x in stride(from: 0, to: geometry.size.width, by: 5) {
                         for y in stride(from: 0, to: geometry.size.height, by: 5) {
                             if Bool.random() {
-                                path.addRect(CGRect(x: x, y: y, width: 2, height: 2))
+                                path.addRect(CGRect(x: x, y: y, width: 2, height: 2)) //adds random white rectangles accross the button
                             }
                         }
                     }
@@ -108,7 +119,7 @@ struct ButtonBackground: View {
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView() 
     }
 }
 #endif

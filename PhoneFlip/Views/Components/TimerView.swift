@@ -12,7 +12,7 @@ struct TimerView: View {
     @ObservedObject var viewModel: GameViewModel
     
     var body: some View {
-        Text(String(format: "%.0f", viewModel.timeLeft))
+        Text(String(format: "%.0f", viewModel.timeLeft)) //simply displays the ViewModel's timeLeft variable
             .font(.system(size: 48, weight: .bold, design: .rounded))
             .foregroundColor(.green)
             .padding()
