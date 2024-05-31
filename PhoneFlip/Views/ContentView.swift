@@ -12,12 +12,6 @@ struct ContentView: View {
                 // Background with a slight gradient and a texture
                 LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.8), Color.green.opacity(0.7)]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-                    /*.overlay(
-                        Image("backgroundTexture") // Replace with your own texture image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    )*/
-                
                 VStack {
                     Spacer()
                     

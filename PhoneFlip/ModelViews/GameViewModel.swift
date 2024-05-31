@@ -7,6 +7,7 @@
 import CoreMotion
 import Foundation
 import Combine
+import SwiftUI
 
 class GameViewModel: ObservableObject {
     @Published var gameSession = GameSession(lastFlip: Flip.notSet, score: 0, timeLeft: 15, isRunning: false)
@@ -18,6 +19,8 @@ class GameViewModel: ObservableObject {
     @Published var matched: MatchState = .notSet
     @Published var refreshable: Bool = false
     @Published var timeLeft: TimeInterval = 0
+    @Published var streak: Int = 0
+    @Published var highScores = HighScores.loadHighScores()
     private var cancellables: Set<AnyCancellable> = []
     
     private let rotationThreshold = 5
@@ -170,11 +173,22 @@ class GameViewModel: ObservableObject {
     
     func matchedFlip(newFlip: Flip, nextFlip: Flip) -> MatchState{
         if(newFlip == self.nextFlip){
+            streak = streak + 1
+            checkFollowTheLeaderHighScore()
             generateNewTrick()
             return .matched
         } else {
+            
+            streak = 0
             return .notMatched
         }
+    }
+    
+    func checkFollowTheLeaderHighScore() {
+        if(highScores.compareFollowTheLeaderHighScore(newScore: streak)){
+//            Alert(title: Text("New High Score: \(streak)"))
+        }
+        
     }
     
     func generateNewTrick() {

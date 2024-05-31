@@ -39,6 +39,9 @@ struct GameView: View {
                 } else if viewModel.currentMode == .followTheLeader {
 //                     Text("Welcome to the Follow The Leader View")
                     Spacer()
+                    FollowTheLeaderHighScoreView(highScore: $viewModel.highScores)
+                    StreakView(streak: $viewModel.streak)
+                    Spacer()
                     LastFlipView(lastFlip: $viewModel.nextFlip)
                     Spacer()
                     LastFlipView(lastFlip: $viewModel.lastFlip)
